@@ -1,0 +1,47 @@
+{
+  "name": "aqua",
+  "version": "3.3.3",
+  "description": "A website and user system for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "setup": "./setup.js",
+    "start": "gulp",
+    "test": "lab -t 100 -S -T ./test/transform.js  ./test/client-before.js ./test/client/ ./test/client-after.js ./test/misc/ ./test/server/",
+    "test-pattern": "lab -v -t 100 -S -T ./test/transform.js --pattern \".*$PATTERN.*\" ./test/",
+    "test-client": "lab -t 100 -S -T ./test/transform.js -L --lint-options '{\"extensions\":[\".js\",\".jsx\"]}' ./test/client-before.js ./test/client/ ./test/client-after.js",
+    "test-server": "lab -t 100 -S -T ./test/transform.js -L --lint-options '{\"extensions\":[\".js\",\".jsx\"]}' ./test/misc/ ./test/server/",
+    "test-cover": "lab -t 100 -S -T ./test/transform.js -r html -o ./test/artifacts/coverage.html ./test/client-before.js ./test/client/ ./test/client-after.js ./test/misc/ ./test/server/ && open ./test/artifacts/coverage.html",
+    "update": "david update"
+  },
+  "author": "Reza Akhavan <jedireza@gmail.com> (http://reza.akhavan.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.2",
+    "gulp-newer": "^0.5.1",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-open": "^1.0.0",
+    "gulp-util": "^3.0.6",
+    "merge-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "esformatter-quotes": "^1.0.3",
+    "esformatter-semicolons": "^1.1.2",
+    "esformatter-spaced-lined-comment": "^2.0.1",
+    "eslint-plugin-hapi": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.x.x",
+    "gulp-esformatter": "^4.0.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-jslint": "^0.2.2",
+    "gulp-less": "^3.x.x",
+    "gulp-newer": "^0.5.x",
+    "gulp-nodemon": "^2.x.x",
+    "gulp-rename": "^1.x.x",
+    "gulp-sourcemaps": "^1.x.x",
+    "gulp-util": "^3.0.6",
+    "merge-stream": "^0.1.x",
+    "require-dir": "^0.3.0"
+  }
+}
